@@ -28,12 +28,15 @@ function calculateRectangleArea() {
 function parallelogramCalculate() {
     const base = getInputValue('parallelogram-base');
     const width = getInputValue('parallelogram-width')
+    const name = document.getElementById('parallelogram').innerText;
     if (isNaN(base) || isNaN(width)) {
         alert('Please enter a valid number');
         return;
     }
     const area = base * width;
-    setValueToInnerText('parallelogram-area', area)
+    setValueToInnerText('parallelogram-area', area);
+    // add card details in the cart container
+    addToCalculationEntry(name, area);
 }
 
 
@@ -63,24 +66,42 @@ function pentagonAreaCalculate() {
 
 }
 
-// Getting the all input value
-function getInputValue(inputId) {
-    const base = document.getElementById(inputId)
-    const baseValue = parseFloat(base.value);
-    return baseValue;
-}
-
 // ellipse calculate
 function ellipseAreaCalculate() {
     const ellipseArea = getInputValue('ellipse-a');
     const ellipseBase = getInputValue('ellipse-b');
+    if (isNaN(ellipseArea) || isNaN(ellipseBase)) {
+        alert('Please enter a valid number');
+        return;
+    }
     const result = Math.PI * ellipseArea * ellipseBase;
     setValueToInnerText('ellipse-area', result.toFixed(2))
 }
+
+// Getting the all input value
+function getInputValue(inputId) {
+    const base = document.getElementById(inputId)
+    const baseValue = parseFloat(base.value);
+    base.value = '';
+    return baseValue;
+}
+
+
 
 
 // Set the result to the span tag
 function setValueToInnerText(elementId, result) {
     const element = document.getElementById(elementId);
     element.innerText = result;
+}
+
+function addToCalculationEntry(shapeType, result) {
+    // console.log('coming sonn!!!')
+    const cartContainer = document.getElementById('cart-container');
+    const count = cartContainer.childElementCount;
+    const p = document.createElement('p');
+    cartContainer.appendChild(p);
+   
+    p.innerHTML = `${count+1}. ${shapeType} ${result} <button class="btn btn-success ms-3 btn-sm">Submit</button>`;
+    // console.log(shapeType + " " + result);
 }

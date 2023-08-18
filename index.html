@@ -59,7 +59,7 @@
                 <div class="card  shadow-xl">
                     <figure><img class="w-[250px] h-[220px]" src="images/parallelogram.png" alt="Shoes" /></figure>
                     <div class="card-body">
-                        <h2 class="text-center font-bold text-[25px]">Parallelogram</h2>
+                        <h2 class="text-center font-bold text-[25px]" id="parallelogram">Parallelogram</h2>
                         <p class="text-center">Area (A) = b X h</p>
                         <p class="">
                             <!-- parallelogram base -->
@@ -85,7 +85,8 @@
                         <p class="text-center">Area (A) = (b X h)/2</p>
                         <p class="">
                             <!-- Rhombus base -->
-                            <input id="Rhombus-base" placeholder="b" class="w-[70px] px-2 bg-[#F1F1F1] h-[32px]" type="text">
+                            <input id="Rhombus-base" placeholder="b" class="w-[70px] px-2 bg-[#F1F1F1] h-[32px]"
+                                type="text">
                             <span>cm</span>
 
                             <!-- Rhombus width -->
@@ -106,7 +107,8 @@
                         <p class="text-center">Area (A) = 0.5 X P X b</p>
                         <p class="">
                             <!-- Pentagon base -->
-                            <input id="pentagon-p" placeholder="p" class="w-[70px] px-2 bg-[#F1F1F1] h-[32px]" type="text">
+                            <input id="pentagon-p" placeholder="p" class="w-[70px] px-2 bg-[#F1F1F1] h-[32px]"
+                                type="text">
                             <span>cm</span>
 
                             <!-- Pentagon width -->
@@ -127,7 +129,8 @@
                         <p class="text-center">Area (A) = πab</p>
                         <p class="">
                             <!-- Rhombus base -->
-                            <input id="ellipse-a" placeholder="a" class="w-[70px] px-2 bg-[#F1F1F1] h-[32px]" type="text">
+                            <input id="ellipse-a" placeholder="a" class="w-[70px] px-2 bg-[#F1F1F1] h-[32px]"
+                                type="text">
                             <span>cm</span>
 
                             <!-- Rhombus width -->
@@ -145,7 +148,10 @@
             </div>
             <!-- Area calculator -->
             <div class="w-[400px] p-10">
-                <h2 class="text-4xl text-center">Area Calculator</h2>
+                <h4 class="text-2xl text-center font-bold">Area Calculator</h4>
+                <div id="cart-container" class="text-center">
+
+                </div>
             </div>
         </div>
     </main>
